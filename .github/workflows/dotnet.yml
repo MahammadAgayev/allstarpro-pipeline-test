@@ -23,5 +23,6 @@ jobs:
     - name: Copy build
       run: cp .\allstarpro-pipeline-test\bin\Debug\netcoreapp3.1\* C:\Applications\allstarpro-pipeline-test\
     - name: Start application
+      shell: pwsh
       run: |
          Start-WebAppPool -Name allstartpro-pipeline-test
