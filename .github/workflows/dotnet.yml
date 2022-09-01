@@ -22,8 +22,10 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Stop application
-      run: Stop-WebAppPool allstartpro-pipeline-test
+      run: |
+         Stop-WebAppPool allstartpro-pipeline-test
     - name: Copy build
       run: cp .\allstarpro-pipeline-test\bin\Debug\netcoreapp3.1\* C:\Applications\allstarpro-pipeline-test\
     - name: Start application
-      run: Start-WebAppPool allstartpro-pipeline-test
+      run: |
+         Start-WebAppPool allstartpro-pipeline-test
