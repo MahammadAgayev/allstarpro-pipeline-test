@@ -22,5 +22,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: List directory
-      run: ls 
+      run: ls  
  
