@@ -17,8 +17,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Import administration
-      run: Import-Module WebAdministration
+    #- name: Import administration
+    #  run: Import-Module WebAdministration
     - name: Stop application
       run: |
        Stop-WebAppPool -Name allstartpro-pipeline-test
