@@ -15,7 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Check
-      run: $env:PSModulePath
+      run: |
+          $env:PSModulePath
+          Import-Module WebAdministration
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
