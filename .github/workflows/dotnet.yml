@@ -17,7 +17,7 @@ jobs:
     - name: Check
       run: |
           $env:PSModulePath
-          Get-IISAppPool
+          Get-Service actions*
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
