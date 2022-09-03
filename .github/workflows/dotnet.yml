@@ -14,19 +14,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Check
-      run: |
-          $env:PSModulePath
-          Get-Service actions*
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Stop application
       run: |
-       Stop-WebAppPool -Name allstartpro-pipeline-test
+       iisreset /stop
     - name: Copy build
       run: cp .\allstarpro-pipeline-test\bin\Debug\netcoreapp3.1\* C:\Applications\allstarpro-pipeline-test\
     - name: Start application
-      shell: pwsh
-      run: C:\actions-runner\bats\start.ps1
+      run: | 
+        iisreset /start
