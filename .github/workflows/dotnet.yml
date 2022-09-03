@@ -17,7 +17,7 @@ jobs:
     - name: Check
       run: |
           $env:PSModulePath
-          Import-Module WebAdministration
+          Import-Module -SkipEditionCheck WebAdministration
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
